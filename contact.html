@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--==================== TITLE ====================-->
+    <title>InfoTkd | Contacto</title>
+    <link rel="shortcut icon" href="/assets/img/logo.png" type="image/x-icon">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!--==================== SWEETALERT ====================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <!-- NAVBAR -->
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">InfoTkd</a>
+
+            <!-- NAV MENU -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="index.html#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#general-choi" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i>General Choi
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#theory" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i>Teoría
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">
+                            <i class="uil uil-envelope nav__icon"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="nav__btns">
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <section class="contact section grid" id="contact">
+            <div class="contact__titles">
+                <h2 class="section__title">¿Tienes dudas sobre algún tema en específico?</h2>
+                <span class="section__subtitle">Por favor no dudes en ponerte en contacto mediante los medios
+                    disponibles.</span>
+            </div>
+
+            <div class="contact__container container grid">
+                <div>
+                    <!-- CONTACT PHONE -->
+                    <div class="contact__information">
+                        <i class="uil uil-phone contact__icon"></i>
+
+                        <div>
+                            <h3 class="contact__title">Teléfono</h3>
+                            <span class="contact__subtitle">+54 343 459-6964</span>
+                        </div>
+                    </div>
+
+                    <!-- CONTACT MAIL -->
+                    <div class="contact__information">
+                        <i class="uil uil-envelope contact__icon"></i>
+
+                        <div>
+                            <h3 class="contact__title">Email</h3>
+                            <span class="contact__subtitle">
+                                <a href="mailto:olguinesteban20@gmail.com">olguinesteban20@gmail.com</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <form action="https://formspree.io/f/mqkojgrw" method="POST" class="contact__form grid" id="contact-form">
+
+                    <!-- INPUTS -->
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Nombre</label>
+                            <input type="text" name="name" class="contact__input">
+                        </div>
+
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Email</label>
+                            <input type="email" name="email" class="contact__input">
+                        </div>
+                    </div>
+
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Asunto</label>
+                        <input type="text" name="asunto" class="contact__input">
+                    </div>
+
+                    <!-- TEXTAREA -->
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Mensaje</label>
+                        <textarea name="message" id="" cols="0" rows="7" class="contact__input"></textarea>
+                    </div>
+
+                    <!-- SEND BTN -->
+                    <div>
+                        <button type="submit" class="button button--flex button--small">
+                            Enviar
+                            <i class="uil uil-message button__icon"></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">InfoTkd</h1>
+                    <span class="footer__subtitle">¡La información del Taekwon-Do a un click!</span>
+                </div>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="index.html#home" class="footer__link">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="index.html#general-choi" class="footer__link">General-choi</a>
+                    </li>
+                    <li>
+                        <a href="index.html#theory" class="footer__link">Teoría</a>
+                    </li>
+                    <li>
+                        <a href="/contact.html" class="footer__link">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="footer__copy"></p>
+        </div>
+    </footer>
+
+    <!--==================== SWEET ALERT ====================-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contact.js"></script>
+</body>
+
+</html>

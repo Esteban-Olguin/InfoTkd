@@ -1,0 +1,453 @@
+@import 'variables';
+@import 'common/header';
+@import 'common/contact';
+@import 'common/footer';
+
+/* ==================== GOOGLE FONTS ==================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*==================== BASE ====================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 0 $header-height 0;
+    font-family: $body-font;
+    font-size: $normal-font-size;
+    background-color: $body-color;
+    color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: $title-color;
+    font-weight: $font-semi-bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+b {
+    color: $first-color;
+}
+
+
+/* ==================== REUSABLE SCSS CLASSES ==================== */
+.section {
+    padding: $m-3 0 $m-3;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__title {
+    font-size: $h1-font-size;
+    color: $title-color;
+}
+
+.section__subtitle {
+    display: block;
+    font-size: $small-font-size;
+    margin-bottom: $m-3;
+}
+
+.section__title,
+.section__subtitle {
+    text-align: center;
+}
+
+
+/* ==================== LAYOUT ==================== */
+.container {
+    max-width: 768px;
+    margin-left: $m-1-5;
+    margin-right: $m-1-5;
+}
+
+.grid {
+    display: grid;
+    gap: $m-1-5;
+}
+
+
+/*==================== BUTTONS ====================*/
+.button {
+    transition: .2s;
+    display: inline-block;
+    background-color: $first-color;
+    color: $white;
+    padding: 1rem;
+    border-radius: .4rem;
+    font-weight: $font-medium;
+
+    &:hover {
+        background-color: $first-color-alt;
+    }
+
+    &__icon {
+        transition: .3s;
+        font-size: 1.25rem;
+        margin-left: $m-0-5;
+    }
+
+    &--flex {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &--small {
+        padding: .75rem 1rem;
+    }
+
+    &--link {
+        transition: .2s;
+        padding: 0;
+        background-color: transparent;
+        color: $first-color;
+
+        &:hover {
+            background-color: transparent;
+            color: $first-color-alt;
+        }
+    }
+}
+
+
+/*========== SCROLL UP ==========*/
+.scrollup {
+    transition: .4s;
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    background-color: $first-color;
+    opacity: .8;
+    padding: 0 .3rem;
+    border-radius: .4rem;
+    z-index: $z-tooltip;
+
+    &:hover {
+        transform: translateY(-.3rem);
+        background-color: $first-color-alt;
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+        color: $white;
+    }
+}
+
+/* Show scroll */
+.show-scroll {
+    bottom: 5rem;
+}
+
+/*========== SCROLL BAR ==========*/
+::-webkit-scrollbar {
+    width: .60rem;
+    background-color: $scroll-bar-color;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $scroll-thumb-color;
+    border-radius: .5rem;
+
+    &:hover {
+        background-color: $text-color-light;
+    }
+}
+
+/*========== HOME ==========*/
+.home {
+    transition: .2s;
+    text-align: center;
+
+    &__description {
+        box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    &__img-container {
+        align-items: center;
+        align-content: center;
+    }
+}
+
+/*==================== GENERAL CHOI & THEORY ====================*/
+.general-choi,
+.theory {
+    transition: 0.2s;
+
+    &__container {
+        row-gap: 0;
+    }
+
+    &__content {
+        transition: 0.5s ease-in-out;
+        box-shadow: 0px 8px 9px 0px rgba(138, 136, 136, 0.2);
+        overflow: hidden;
+        padding: 0.5rem 0.8rem;
+        margin-bottom: $m-1;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: $m-2;
+        cursor: pointer;
+    }
+
+    &__arrow {
+        font-size: 2rem;
+        color: $first-color;
+    }
+
+    &__title {
+        font-size: $h3-font-size;
+    }
+
+    &__subtitle {
+        font-size: $small-font-size;
+        color: $text-color-light;
+    }
+
+    h3,
+    h4 {
+        margin-bottom: $m-1;
+    }
+
+    p {
+        color: $title-color;
+    }
+
+    &__arrow {
+        transition: 0.4s;
+        margin-left: auto;
+    }
+
+    &__data {
+        transition: 0.3s;
+        row-gap: 1.5rem;
+        padding: 0 .8rem;
+
+        &-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 250px;
+                width: 200px;
+                margin-bottom: $m-1;
+            }
+        }
+
+        p {
+            margin-bottom: $m-1;
+        }
+    }
+
+    &__close .general-choi__data,
+    &__close .theory__data {
+        height: 0;
+        overflow: hidden;
+    }
+
+    &__close .general-choi__header,
+    &__close .theory__header {
+        margin-bottom: 0;
+    }
+
+    &__open .general-choi__data,
+    &__open .theory__data {
+        height: max-content;
+        margin-bottom: $m-2-5;
+    }
+
+    &__open .general-choi__arrow,
+    &__open .theory__arrow {
+        transform: rotate(-180deg);
+    }
+}
+
+.theory__data {
+    text-align: left;
+
+    ul,
+    ol,
+    li,
+    p {
+        margin-bottom: $m-1;
+    }
+
+    li {
+        margin-left: $m-1;
+    }
+
+    ul {
+        p {
+            margin: $m-1 0;
+        }
+    }
+}
+
+
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .container {
+        margin-left: $m-1;
+        margin-right: $m-1;
+    }
+
+    .nav {
+        font-size: $small-font-size;
+
+        &__menu {
+            padding: 2rem .25rem 4rem;
+        }
+
+        &__list {
+            column-gap: 0;
+        }
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 568px) {
+    .general-choi,
+    .theory {
+        text-align: justify;
+    }
+
+    .general-choi__data-img {
+        display: inline;
+
+        #img-1,
+        #img-3 {
+            float: left;
+            margin-right: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #img-2 {
+            float: right;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .contact {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .section {
+        padding: 6rem 0 2rem;
+
+        &__subtitle {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .header {
+        top: 0;
+        bottom: initial;
+    }
+
+    .header,
+    .main,
+    .footer__container {
+        padding: 0 1rem;
+    }
+
+    .nav {
+        height: calc($header-height + 1.5rem);
+        column-gap: 1rem;
+
+        &__icon,
+        &__close,
+        &__toggle {
+            display: none;
+        }
+
+        &__list {
+            display: flex;
+            column-gap: 2rem;
+        }
+
+        &__menu {
+            margin-left: auto;
+        }
+    }
+
+    .footer {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+
+        &__bg {
+            padding: 3rem 0 3.5rem;
+        }
+
+        &__links {
+            flex-direction: row;
+            column-gap: 2rem;
+        }
+
+        &__socials {
+            justify-self: flex-end;
+        }
+
+        &__copy {
+            margin-top: 4.5rem;
+        }
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+    .header,
+    .main,
+    .footer__container {
+        padding: 0;
+    }
+
+    .contact {
+        &__form {
+            width: 460px;
+        }
+
+        &__inputs {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
