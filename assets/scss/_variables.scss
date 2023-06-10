@@ -3,14 +3,12 @@
 $header-height: 3rem;
 
 /* ========== Colors ========== */
+/* Purple 250 - Green 142 - Blue 230 - Pink 340 */
 
 $white: #FFF;
 $hue-color: 230;
 
-/* Purple 250 - Green 142 - Blue 230 - Pink 340 */
-
-/* HSL color mode */
-$first-color: hsl($hue-color, 100%, 61%);
+$first-color: hsl($hue-color, 69%, 61%);
 $first-color-second: hsl($hue-color, 69%, 61%);
 $first-color-alt: hsl($hue-color, 57%, 53%);
 $first-color-lighter: hsl($hue-color, 92%, 85%);
@@ -19,7 +17,7 @@ $text-color: hsl($hue-color, 8%, 45%);
 $text-color-light: hsl($hue-color, 8%, 65%);
 $input-color: hsl($hue-color, 70%, 96%);
 $body-color: hsl($hue-color, 60%, 99%);
-$container-color: $white;
+$container-color: #fff;
 $scroll-bar-color: hsl($hue-color, 12%, 90%);
 $scroll-thumb-color: hsl($hue-color, 12%, 80%);
 

@@ -1,4 +1,4 @@
-/*==================== MENU SHOW Y HIDDEN ====================*/
+/*==================== MENU SHOW & HIDDEN ====================*/
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close');
@@ -31,6 +31,7 @@ function linkAction() {
 
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
+
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader() {
     const nav = document.getElementById('header')
@@ -38,29 +39,31 @@ function scrollHeader() {
     if (this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
 }
 
+
 window.addEventListener('scroll', scrollHeader);
 
-/*==================== GENERAL CHOI ACCORDION ====================*/
-const generalChoiContent = document.querySelectorAll('.general-choi__content'),
-    generalChoiHeader = document.querySelectorAll('.general-choi__header');
 
-function toggleGeneralChoi() {
-    let itemClass = this.parentNode.className;
+/*==================== CHANGE THEORY COLOR ====================*/
+document.addEventListener('DOMContentLoaded', function () {
+    var links = document.querySelectorAll('.home__index a[href^="#"]');
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function (event) {
+            event.preventDefault();
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
 
-    for (i = 0; i < generalChoiContent.length; i++) {
-        generalChoiContent[i].className = 'general-choi__content general-choi__close';
-    };
+            targetElement.classList.add("highlight");
 
-    if (itemClass === 'general-choi__content general-choi__close') {
-        this.parentNode.className = 'general-choi__content general-choi__open';
-    } else {
-        this.parentNode.className = 'general-choi__content general-choi__close';
+            setTimeout(function () {
+                targetElement.classList.remove("highlight");
+            }, 4000);
+
+            // Scroll al elemento al que se ha redirigido
+            window.location.href = this.getAttribute('href');
+        });
     }
-};
-
-generalChoiHeader.forEach((el) => {
-    el.addEventListener('click', toggleGeneralChoi);
 });
+
 
 /*==================== THEORY ACCORDION ====================*/
 const theoryContent = document.querySelectorAll('.theory__content'),
@@ -84,6 +87,7 @@ theoryHeader.forEach((el) => {
     el.addEventListener('click', toggleTheory);
 });
 
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]');
 
@@ -106,6 +110,7 @@ function scrollActive() {
 const form = document.querySelector(".contact__form");
 
 window.addEventListener('scroll', scrollActive);
+
 
 /*==================== UPDATE COPYRIGHT YEAR ====================*/
 let currentYear = new Date().getFullYear();

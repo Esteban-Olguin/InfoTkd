@@ -1,7 +1,6 @@
 /* ==================== VARIABLES SASS ==================== */
 /* ========== Colors ========== */
 /* Purple 250 - Green 142 - Blue 230 - Pink 340 */
-/* HSL color mode */
 /* ========== Font and typography ========== */
 /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
 /* ========== Font weight ========== */
@@ -17,7 +16,7 @@
   bottom: 0;
   left: 0;
   z-index: 100;
-  background-color: #fbfbfe; }
+  background-color: #FFF; }
   .header ul {
     list-style: none; }
 
@@ -36,13 +35,13 @@
   .nav__logo {
     transition: .2s; }
     .nav__logo:hover {
-      color: #3859ff; }
+      color: #576ee0; }
   .nav__toggle {
     transition: .2s;
     font-size: 1.1rem;
     cursor: pointer; }
     .nav__toggle:hover {
-      color: #3859ff; }
+      color: #576ee0; }
   @media screen and (max-width: 767px) {
     .nav .nav__menu {
       transition: .3s;
@@ -66,7 +65,7 @@
     color: #232429;
     font-weight: 500; }
     .nav__link:hover {
-      color: #3859ff; }
+      color: #576ee0; }
   .nav__icon {
     font-size: 1.2rem; }
   .nav__close {
@@ -76,15 +75,16 @@
     bottom: .5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #3859ff; }
+    color: #576ee0; }
     .nav__close:hover {
       color: #435acb; }
   .nav .show-menu {
-    bottom: 0; }
+    bottom: 0;
+    background-color: #FFF; }
 
 /* Active link */
 .active-link {
-  color: #3859ff; }
+  color: #576ee0; }
 
 /* Change background header */
 .scroll-header {
@@ -102,7 +102,7 @@
     margin-bottom: 2rem; }
   .contact__icon {
     font-size: 2rem;
-    color: #3859ff;
+    color: #576ee0;
     margin-right: 0.75rem; }
   .contact__titles {
     padding: 0 1.5rem; }
@@ -178,6 +178,10 @@ body {
   background-color: #fbfbfe;
   color: #6a6d7c; }
 
+.highlight {
+  box-shadow: 0px 0px 13px 14px rgba(0, 0, 0, 0.8);
+  transition: box-shadow 1s; }
+
 h1,
 h2,
 h3,
@@ -193,7 +197,7 @@ img {
   height: auto; }
 
 b {
-  color: #3859ff; }
+  color: #576ee0; }
 
 /* ==================== REUSABLE SCSS CLASSES ==================== */
 .section {
@@ -228,7 +232,7 @@ b {
 .button {
   transition: .2s;
   display: inline-block;
-  background-color: #3859ff;
+  background-color: #576ee0;
   color: #FFF;
   padding: 1rem;
   border-radius: .4rem;
@@ -248,7 +252,7 @@ b {
     transition: .2s;
     padding: 0;
     background-color: transparent;
-    color: #3859ff; }
+    color: #576ee0; }
     .button--link:hover {
       background-color: transparent;
       color: #435acb; }
@@ -259,7 +263,7 @@ b {
   position: fixed;
   right: 1rem;
   bottom: -20%;
-  background-color: #3859ff;
+  background-color: #576ee0;
   opacity: .8;
   padding: 0 .3rem;
   border-radius: .4rem;
@@ -294,6 +298,15 @@ b {
   .home__description {
     box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.1);
     padding: 1rem; }
+  .home__index {
+    text-align: left; }
+    .home__index li {
+      margin-left: 2rem; }
+    .home__index a {
+      color: #6a6d7c;
+      text-decoration: none; }
+      .home__index a:hover {
+        color: #576ee0; }
   .home__img-container {
     align-items: center;
     align-content: center; }
@@ -321,7 +334,7 @@ b {
   .general-choi__arrow,
   .theory__arrow {
     font-size: 2rem;
-    color: #3859ff; }
+    color: #576ee0; }
   .general-choi__title,
   .theory__title {
     font-size: 1.125rem; }
@@ -365,9 +378,7 @@ b {
   .theory__close .theory__data {
     height: 0;
     overflow: hidden; }
-  .general-choi__close .general-choi__header,
   .general-choi__close .theory__header,
-  .theory__close .general-choi__header,
   .theory__close .theory__header {
     margin-bottom: 0; }
   .general-choi__open .general-choi__data,
@@ -376,9 +387,7 @@ b {
   .theory__open .theory__data {
     height: max-content;
     margin-bottom: 2.5rem; }
-  .general-choi__open .general-choi__arrow,
   .general-choi__open .theory__arrow,
-  .theory__open .general-choi__arrow,
   .theory__open .theory__arrow {
     transform: rotate(-180deg); }
 
