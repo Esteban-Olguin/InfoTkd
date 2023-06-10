@@ -1,10 +1,11 @@
 /*==================== MENU SHOW & HIDDEN ====================*/
+// Get the elements for menu show and hide
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close');
 
 /*===== MENU SHOW =====*/
-/* Validate if constant exists */
+// Add an event listener to the toggle button to show the menu
 if (navToggle) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
@@ -12,20 +13,20 @@ if (navToggle) {
 };
 
 /*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
+// Add an event listener to the close button to hide the menu
 if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
-    })
+    });
 }
 
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link');
 
+// Function to remove the show-menu class when a nav__link is clicked
 function linkAction() {
     const navMenu = document.getElementById('nav-menu');
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu');
 };
 
@@ -33,62 +34,45 @@ navLink.forEach(n => n.addEventListener('click', linkAction));
 
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
+// Function to change the header background when scrolling
 function scrollHeader() {
-    const nav = document.getElementById('header')
-    // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
-    if (this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+    const nav = document.getElementById('header');
+    if (this.scrollY >= 80) {
+        nav.classList.add('scroll-header');
+    } else {
+        nav.classList.remove('scroll-header');
+    }
 }
-
 
 window.addEventListener('scroll', scrollHeader);
 
-
-/*==================== CHANGE THEORY COLOR ====================*/
-document.addEventListener('DOMContentLoaded', function () {
-    var links = document.querySelectorAll('.home__index a[href^="#"]');
-    for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener('click', function (event) {
-            event.preventDefault();
-            var targetId = this.getAttribute('href').substring(1);
-            var targetElement = document.getElementById(targetId);
-
-            targetElement.classList.add("highlight");
-
-            setTimeout(function () {
-                targetElement.classList.remove("highlight");
-            }, 4000);
-
-            // Scroll al elemento al que se ha redirigido
-            window.location.href = this.getAttribute('href');
-        });
-    }
-});
-
-
 /*==================== THEORY ACCORDION ====================*/
+// Toggle theory content when theory header is clicked
 const theoryContent = document.querySelectorAll('.theory__content'),
     theoryHeader = document.querySelectorAll('.theory__header');
 
 function toggleTheory() {
     let itemClass = this.parentNode.className;
 
-    for (i = 0; i < theoryContent.length; i++) {
-        theoryContent[i].className = 'theory__content theory__close';
-    };
-
-    if (itemClass === 'theory__content theory__close') {
-        this.parentNode.className = 'theory__content theory__open';
-    } else {
+    if (itemClass === 'theory__content theory__open') {
         this.parentNode.className = 'theory__content theory__close';
+    } else {
+        this.parentNode.className = 'theory__content theory__open';
     }
-};
+}
 
 theoryHeader.forEach((el) => {
     el.addEventListener('click', toggleTheory);
 });
 
+// Set the initial state of all theory__content elements to theory__open
+for (i = 0; i < theoryContent.length; i++) {
+    theoryContent[i].className = 'theory__content theory__open';
+}
+
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+// Add active class to nav__menu links based on section scroll position
 const sections = document.querySelectorAll('section[id]');
 
 function scrollActive() {
@@ -103,16 +87,15 @@ function scrollActive() {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
         } else {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
-        };
+        }
     });
-};
-
-const form = document.querySelector(".contact__form");
+}
 
 window.addEventListener('scroll', scrollActive);
 
 
 /*==================== UPDATE COPYRIGHT YEAR ====================*/
+// Update the footer copyright year dynamically
 let currentYear = new Date().getFullYear();
 
-document.querySelector(".footer__copy").innerHTML = "&copy; " + currentYear + " | InfoTkd | Todos los derechos reservados.";
+document.querySelector(".footer__copy").innerHTML = "&copy; " + currentYear + " | InfoTkd | All rights reserved.";

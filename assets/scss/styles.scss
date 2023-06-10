@@ -25,11 +25,6 @@ body {
     color: $text-color;
 }
 
-.highlight {
-    box-shadow: 0px 0px 13px 14px rgba(0, 0, 0, 0.8);
-    transition: box-shadow 1s;
-}
-
 h1,
 h2,
 h3,
@@ -57,6 +52,10 @@ b {
     padding: $m-3 0 $m-3;
     justify-content: center;
     align-items: center;
+
+    &:first-child {
+        padding: $m-3 0 $m-1;
+    }
 }
 
 .section__title {
@@ -196,7 +195,7 @@ b {
         a {
             color: $text-color;
             text-decoration: none;
-            
+
             &:hover {
                 color: $first-color;
             }
@@ -209,8 +208,96 @@ b {
     }
 }
 
-/*==================== GENERAL CHOI & THEORY ====================*/
-.general-choi,
+/*==================== GENERAL CHOI ====================*/
+.general-choi {
+    transition: 0.2s;
+
+    &__container {
+        row-gap: 0;
+    }
+
+    .section__title {
+        margin-bottom: 2rem;
+    }
+
+    &__content {
+        transition: 0.5s ease-in-out;
+        box-shadow: 0px 8px 9px 0px rgba(138, 136, 136, 0.2);
+        overflow: hidden;
+        padding: 0.5rem 0.8rem;
+        margin-bottom: $m-1;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: $m-2;
+        cursor: pointer;
+    }
+
+    &__arrow {
+        font-size: 2rem;
+        color: $first-color;
+        transition: 0.4s;
+        margin-left: auto;
+    }
+
+    &__title {
+        font-size: $h3-font-size;
+    }
+
+    &__subtitle {
+        font-size: $small-font-size;
+        color: $text-color-light;
+    }
+
+    h3,
+    h4 {
+        margin-bottom: $m-1;
+    }
+
+    p {
+        color: $title-color;
+    }
+
+    &__data {
+        transition: 0.3s;
+        row-gap: 1.5rem;
+        padding: 0 .8rem;
+
+        &-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 250px;
+                width: 200px;
+                margin-bottom: $m-1;
+            }
+        }
+
+        p {
+            margin-bottom: $m-1;
+        }
+    }
+
+    .theory__close .general-choi__data {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .theory__open .general-choi__data {
+        height: max-content;
+        margin-bottom: $m-2-5;
+    }
+
+    .theory__open .theory__arrow {
+        transform: rotate(-180deg);
+    }
+}
+
+/*==================== THEORY ====================*/
 .theory {
     transition: 0.2s;
 
@@ -236,6 +323,8 @@ b {
     &__arrow {
         font-size: 2rem;
         color: $first-color;
+        transition: 0.4s;
+        margin-left: auto;
     }
 
     &__title {
@@ -244,7 +333,7 @@ b {
 
     &__subtitle {
         font-size: $small-font-size;
-        color: $text-color-light
+        color: $text-color-light;
     }
 
     h3,
@@ -256,15 +345,27 @@ b {
         color: $title-color;
     }
 
-    &__arrow {
-        transition: 0.4s;
-        margin-left: auto;
-    }
-
     &__data {
         transition: 0.3s;
         row-gap: 1.5rem;
         padding: 0 .8rem;
+        
+        ul,
+        ol,
+        li,
+        p {
+            margin-bottom: $m-1;
+        }
+    
+        li {
+            margin-left: $m-1;
+        }
+    
+        ul {
+            p {
+                margin: $m-1 0;
+            }
+        }
 
         &-img {
             display: flex;
@@ -283,7 +384,6 @@ b {
         }
     }
 
-    &__close .general-choi__data,
     &__close .theory__data {
         height: 0;
         overflow: hidden;
@@ -293,7 +393,6 @@ b {
         margin-bottom: 0;
     }
 
-    &__open .general-choi__data,
     &__open .theory__data {
         height: max-content;
         margin-bottom: $m-2-5;
@@ -303,28 +402,6 @@ b {
         transform: rotate(-180deg);
     }
 }
-
-.theory__data {
-    text-align: left;
-
-    ul,
-    ol,
-    li,
-    p {
-        margin-bottom: $m-1;
-    }
-
-    li {
-        margin-left: $m-1;
-    }
-
-    ul {
-        p {
-            margin: $m-1 0;
-        }
-    }
-}
-
 
 
 /*==================== MEDIA QUERIES ====================*/
@@ -442,6 +519,7 @@ b {
         &__links {
             flex-direction: row;
             column-gap: 2rem;
+            margin-left: 4.5rem;
         }
 
         &__socials {
