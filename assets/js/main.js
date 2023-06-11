@@ -1,3 +1,16 @@
+/*==================== GREETINGS ====================*/
+let greetingElement = document.getElementById("greeting");
+let currentHour = new Date().getHours();
+
+if (currentHour >= 4 && currentHour < 13) {
+    greetingElement.innerHTML = "¡Buenos días!";
+} else if (currentHour >= 13 && currentHour < 20) {
+    greetingElement.innerHTML = "¡Buenas tardes!";
+} else {
+    greetingElement.innerHTML = "Buenas noches";
+}
+
+
 /*==================== MENU SHOW & HIDDEN ====================*/
 // Get the elements for menu show and hide
 const navMenu = document.getElementById('nav-menu'),
